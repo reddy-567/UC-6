@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Temperature Converter</title>
+	</head>
+	<body>
+	<h1>Temparature Converter</h1>
+		<select id="input1" required>
+			<option value="" selected disabled>Select</option>
+			<option value="Fahrenheit">Fahrenheit</option>
+			<option value="Celsius">Celsius</option>
+		</select>
+		<input type="number" name="Input" id="input2" required> 
+		<button type="submit" onclick="convert()">Convert</button>
+		<script type="text/javascript">
+			function convert()
+			{
+				var m=document.getElementById("input1").value;
+				var val=document.getElementById("input2").value;
+				if(m=="Fahrenheit")
+				{
+					var res=(val-32)*(5/9);
+					document.getElementById("output1").setAttribute("value",res+" Celcius");
+				}
+				if(m=="Celsius")
+				{
+					var res=(val*(9/5))+32;
+					document.getElementById("output1").setAttribute("value",res+" Fahrenheit");
+				}
+			}
+		</script>
+		<br><br>
+		<input id="output1" type="" disabled>
+	</body>
+</html>
